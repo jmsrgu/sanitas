@@ -13,3 +13,10 @@ Notas adicionales
 * Hay libertad total para hacer cualquier cosa que mejore el código (añadir tantas nuevas librerías como se crea necesario, actualizar plugins, configuraciones, etc.).
 * No hay tests unitarios, pero también es interesante ver los tests (o algún tipo de test) que verifiquen el comportamiento de la aplicación.
 * Reservar los últimos 15 minutos para indicar por correo acciones adicionales que podrían seguir realizándose.
+
+
+
+
+service repository
+
+boot  parte de test levantar contesto

@@ -18,6 +18,7 @@ import org.springframework.web.client.RestTemplate;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import com.mycorp.repository.ValueCodeRepository;
 import com.mycorp.support.CorreoElectronico;
 import com.mycorp.support.DatosCliente;
 import com.mycorp.support.MensajeriaService;
@@ -26,13 +27,17 @@ import com.mycorp.support.PolizaBasicoFromPolizaBuilder;
 import com.mycorp.support.Ticket;
 import com.mycorp.support.ValueCode;
 
+
 import portalclientesweb.ejb.interfaces.PortalClientesWebEJBRemote;
 import util.datos.PolizaBasico;
 import util.datos.UsuarioAlta;
 
 @Service
 public class ZendeskService {
-
+	@Autowired
+	private ValueCodeRepository valueCodeRepository;
+	
+	
     /** The Constant LOG. */
     private static final Logger LOG = LoggerFactory.getLogger( ZendeskService.class );
 
@@ -231,7 +236,8 @@ public class ZendeskService {
     }
 
     public List< ValueCode > getTiposDocumentosRegistro() {
-        return Arrays.asList( new ValueCode(), new ValueCode() ); // simulacion servicio externo
+    	List<ValueCode> listValuecode =valueCodeRepository.findAll();
+        return listValuecode;
     }
 
     /**

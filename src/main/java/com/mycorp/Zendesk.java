@@ -6,8 +6,11 @@ import java.util.Collections;
 import java.util.concurrent.ExecutionException;
 import java.util.regex.Pattern;
 
+import javax.persistence.Entity;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.annotation.EnableLoadTimeWeaving;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -25,6 +28,12 @@ import com.ning.http.client.RequestBuilder;
 import com.ning.http.client.Response;
 import com.ning.http.client.uri.Uri;
 
+
+//import lombok.Getter;
+//import lombok.Setter;
+//@Getter
+//@Setter
+//@Entity
 public class Zendesk implements Closeable {
     private static final String JSON = "application/json; charset=UTF-8";
     private final boolean closeClient;
